@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use DateTimeInterface;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -27,7 +28,10 @@ class Product extends Model
     protected $hidden = [
         'price',
     ];
-
+    protected $casts = [
+        'created_at' => 'date:Y-m-d',
+        'updated_at' => 'datetime:Y-m-d a',
+    ];
     // /**
     //  * The attributes that should be cast.
     //  *
